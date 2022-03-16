@@ -1,0 +1,190 @@
+.wave {
+    animation: wave 0.45s infinite;
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(114deg);
+    }
+
+    50% {
+        transform: rotate(100deg);
+    }
+
+    
+    100% {
+        transform: rotate(114deg);
+    }
+}
+
+.jump {
+    top: 201;
+    left: 0;
+    animation: jump 2s infinite;
+}
+
+@keyframes jump {
+    0% { 
+        top: 100;
+        left: 0;
+        transform: translate(0%, 10%) scale(1.25, 0.75);
+     }
+    50% { 
+        top: 100;
+        left: 0;
+        transform: translate(0%, -30%) scale(1, 1); }
+    55% { 
+        top: 100;
+        left: 0;
+        transform: translate(0%, -30%) /*rotate(15deg)*/; }
+    60% {
+        top: 100;
+        left: 0; 
+        transform: translate(0%, -30%) /*rotate(-15deg)*/; }
+    65% {
+        top: 100;
+        left: 0; 
+        transform: translate(0%, -30%) /*rotate(15deg)*/; }
+    70% {
+        top: 100;
+        left: 0; 
+        transform: translate(0%, -30%) /*rotate(-15deg)*/; }
+    100% {
+        top: 100;
+        left: 0; 
+        transform: translate(0%, 10%) scale(1.25, 0.75); }
+}
+
+
+.shake {
+    animation: shake 2s infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(15deg);
+    }
+
+    25% {
+        transform: rotate(-15deg);
+    }
+
+    50% {
+        transform: rotate(15deg);
+    }
+
+    75% {
+        transform: rotate(-15deg);
+    }
+
+    100% {
+        transform: rotate(15deg);
+    }
+}
+
+.danceBody {
+    animation: danceBody 2s infinite;
+}
+
+.danceHandR {
+    animation: danceHandR 2s infinite;
+}
+
+@keyframes danceHandR {
+    0% {
+        transform: rotate(150deg);
+    }
+
+    50% {
+        transform: rotate(100deg);
+    }
+
+    
+    100% {
+        transform: rotate(150deg);
+    }
+}
+
+.danceHandL {
+    animation: danceHandL 2s infinite;
+}
+
+@keyframes danceHandL {
+    0% {
+        transform: rotate(-150deg);
+    }
+
+    50% {
+        transform: rotate(-100deg);
+    }
+
+    
+    100% {
+        transform: rotate(-150deg);
+    }
+}
+
+@keyframes danceBody {
+    0% {
+        transform: rotate(10deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+.happyFeetL {
+    animation: happyFeetL 0.6s infinite;
+}
+@keyframes happyFeetL {
+    0% {
+        transform: rotate(80deg);
+    }
+    25% {
+        transform: rotate(50deg);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+    75% {
+        transform: rotate(50deg);
+    }
+    100% {
+        transform: rotate(80deg);
+    }
+}
+
+.happyFeetR {
+    animation: happyFeetR 0.6s infinite;
+}
+
+@keyframes happyFeetR {
+    0% {
+        transform: rotate(-80deg);
+    }
+    25% {
+        transform: rotate(-50deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
+    75% {
+        transform: rotate(-50deg);
+    }
+    100% {
+        transform: rotate(-80deg);
+    }
+}

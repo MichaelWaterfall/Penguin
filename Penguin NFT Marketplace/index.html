@@ -1,0 +1,158 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academy Penguin </title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.0/web3.min.js" integrity="sha512-0/nXBDmnbXRIkGvwIK2UWg4F8xscIFZHGl2sWevr6f0DnFEqZh4uTw78qLQYC16tVxbbHhoaaZLSBoIopZQucg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script type="text/javascript" src="/Penguin NFT Marketplace/js/jquery-3.4.1.js"></script>
+  <link rel="stylesheet" href="/Penguin NFT Marketplace/bootstrap/css/bootstrap.min.css">
+  <script src="/Penguin NFT Marketplace/bootstrap/js/popper.js"></script>
+  <script src="/Penguin NFT Marketplace/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/Penguin NFT Marketplace/js/abi.js"></script>
+  <script src="/Penguin NFT Marketplace/js/colors.js"></script>
+  <script src="/Penguin NFT Marketplace/js/penguinFactory.js"></script>
+  <script src="/Penguin NFT Marketplace/js/penguinSettings.js"></script>
+  <script src="/Penguin NFT Marketplace/js/button.js"></script>
+  <script src="/Penguin NFT Marketplace/js/index.js"></script>
+  
+
+  <link rel="stylesheet" href="/Penguin NFT Marketplace/css/mystyle.css">
+  <link rel="stylesheet" href="/Penguin NFT Marketplace/css/penguin.css">
+  <link rel="stylesheet" href="/Penguin NFT Marketplace/css/colors.css">
+  <link rel="stylesheet" href="/Penguin NFT Marketplace/css/factory.css">
+  <link rel="stylesheet" href="/Penguin NFT Marketplace/css/frontend.css">
+  <link rel="stylesheet" href="/Penguin NFT Marketplace/css/animations.css">
+  <link rel="stylesheet" href="/Penguin NFT Marketplace/css/button.css">
+
+
+</head>
+  <body>
+    <div class="container p-5" style="margin-top: 12vh;margin-bottom: 10vh;">
+        <div align="center">
+        <h1 class="c-white">Penguin-Factory</h1>
+        <p class="c-white">Create your custom Penguin</p>
+        <button onclick="randomPenguin()" class="randomPenguin">Random Penguin</button>
+        <button onclick="defaultPenguin()"class="defaultPenguin">Default Penguin</button>
+        <button class="createPenguin">Create new Penguin</button>
+        <button onclick="buttonColor()" class="colorsB">Colors</button>
+        <button onclick="buttonPattern()" class="attributesB">Patterns and Attributes</button>
+
+    </div>
+        <div class="row">
+            <div class="col-lg-4 penguinBox m-2 light-b-shadow">
+                <div class="penguin ">
+                    <div class="penguin-bottom">
+                    <div class="right-hand"></div> 
+                    <div class="left-hand"></div>
+                    <div class="right-feet"></div>
+                    <div class="left-feet"></div>
+                    </div>
+
+                    <div id="head" class="penguin-top">
+                      <div class="belly"></div>
+                        
+                        <div class="pattern"></div>
+                        <div class="pattern-left"></div>
+                        <div class="pattern-right"></div>
+                        <div class="left-cheek"></div>
+                        <div class="right-cheek"></div>
+                        <div class="beak-bottom"></div>
+                        <div class="beak-top"></div>
+                        <div class="blush-left"></div>
+                        <div class="blush-right"></div>
+                        <div class="left-eye">
+                          <div class="sparkle"></div>
+                        </div>
+                        <div class="right-eye">
+                          <div class="sparkle"></div>
+                        </div>
+                        
+
+                    </div>
+
+
+
+                    
+                </div>
+                <br>
+                <div class="dnaDiv" id="penguinDNA">
+                    <b>
+                        DNA:
+                        <!-- Colors -->
+                         <span id="dnabody"></span>
+                         <span id="dnabelly"></span>
+                         <span id="dnaface"></span>
+                         <span id="dnahand"></span>
+                        
+                         <!-- attributes -->
+                         <span id="dnashape"></span>
+                         <span id="dnadecoration"></span>
+                         <span id="dnadecorationMid"></span>
+                         <span id="dnadecorationSides"></span>
+                         <span id="dnaanimation"></span>
+                         <span id="dnaspecial"></span>
+                    </b>
+                </div>
+            </div>
+            <div class="col-lg-7 attributes m-2 light-b-shadow">
+
+
+<!-- Penguin colors -->
+<div id="penguinColors">
+                <div class="form-group">
+                    <label for="formControlRange"><b>Head and body</b><span class="badge badge-dark ml-2" id="headcode"></span></label>
+                    <input type="range" min="10" max="98" class="form-control-range" id="bodycolor">
+                </div>
+                <div class="form-group">
+                    <label for="formControlRange"><b>Belly</b><span class="badge badge-dark ml-2" id="bellycode"></span></label>
+                    <input type="range" min="10" max="98" class="form-control-range" id="bellycolor">
+                </div>  
+                <div class="form-group">
+                  <label for="formControlRange"><b>Face</b><span class="badge badge-dark ml-2" id="facecode"></span></label>
+                  <input type="range" min="10" max="98" class="form-control-range" id="facecolor">
+                </div>
+                <div class="form-group">
+                  <label for="formControlRange"><b>Hands</b><span class="badge badge-dark ml-2" id="handcode"></span></label>
+                  <input type="range" min="10" max="98" class="form-control-range" id="handcolor">
+                </div>
+                <div class="form-groupP">
+                  <label for="formControlRange"><b>Eye shape</b><span class="badge badge-dark ml-2" id="eyeName"></span></label>
+                  <input type="range" min="1" max="7" class="form-control-range" id="eyeshape">
+                </div>
+                <div class="form-groupP">
+                  <label for="formControlRange"><b>Pattern</b><span class="badge badge-dark ml-2" id="decorationPattern"></span></label>
+                  <input type="range" min="1" max="7" class="form-control-range" id="patternshape">
+                </div>
+                <div class="form-groupP">
+                  <label for="formControlRange"><b>Pattern Color Mid</b><span class="badge badge-dark ml-2" id="decorationMidcolor"></span></label>
+                  <input type="range" min="10" max="98" class="form-control-range" id="patterncolormid">
+                </div>
+                <div class="form-groupP">
+                  <label for="formControlRange"><b>Pattern Color Sides</b><span class="badge badge-dark ml-2" id="decorationSidescolor"></span></label>
+                  <input type="range" min="10" max="98" class="form-control-range" id="patterncolorsides">
+                </div>
+                <div class="form-groupP">
+                  <label for="formControlRange"><b>Animation</b><span class="badge badge-dark ml-2" id="animationName"></span></label>
+                  <input type="range" min="1" max="6" class="form-control-range" id="animation">
+                </div>
+              </div>
+
+            </div>
+
+            </div>
+            <br>
+
+        </div>
+
+
+
+    </div>
+    <footer align="left">
+        <p>Ivan on Tech Academy Bootcamp July 2020</p>
+    </footer>
+
+  </body>
+
+
+</html>
